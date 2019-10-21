@@ -10767,5 +10767,89 @@
       </description>
     </field>
    </message>
-  
+   <message id="2007" name="TBR Fish Tag" abbrev="TBRFishTag" source="vehicle,ccu">
+    <description>
+      TBR700RT received fish tag detection
+    </description>
+    <field name="TBR serial number" abbrev="serial_no" type="uint32_t">
+      <description>
+        Serial number of the TBR receiver
+      </description>
+    </field>
+    <field name="UNIX Timestamp" abbrev="unix_timestamp" type="uint32_t">
+      <description>
+        Time of tag detection as UNIX timestamp 
+      </description>
+    </field>
+    <field name="Millisecond" abbrev="millis" type="uint16_t" unit="ms">
+      <description>
+        Milliseconds
+      </description>
+    </field>
+    
+    <field name="Transmit Protocol" abbrev="trans_protocol" type="uint8_t" unit="Enumerated" prefix="TBR">
+      <description>
+        Transmit Protocol of received transponder
+      </description>
+      <value id="1" name="R256" abbrev="R256"/>
+      <value id="2" name="R04K" abbrev="R04K"/>
+      <value id="3" name="R06K" abbrev="R06K"/>
+      <value id="4" name="R64K" abbrev="R64K"/>
+      <value id="5" name="R01M" abbrev="R01M"/>
+      <value id="6" name="S256" abbrev="S256"/>
+      <value id="7" name="HS256" abbrev="HS256"/>
+      <value id="8" name="DS256" abbrev="DS256"/>
+    </field>
+
+    <field name="Transmitter ID" abbrev="trans_id" type="uint32_t">
+      <description>
+        Transmitter ID
+      </description>
+    </field>
+    <field name="Transmitter Data" abbrev="trans_data" type="uint16_t">
+      <description>
+        Transmitter Data
+      </description>
+    </field>
+    <field name="Signal to Noise Ratio" abbrev="SNR" type="uint8_t" unit="dB">
+      <description>
+        Signal to Noise Ratio
+      </description>
+    </field>
+    <field name="Transmitter Detection Frequency" abbrev="trans_freq" type="uint8_t">
+      <description>
+        Transmitter Detection Frequency
+      </description>
+    </field>
+    <field name="Receiver Memory Address" abbrev="recv_mem_addr" type="uint16_t">
+      <description>
+        Receiver Memory Address (running entry number in flash memory)
+      </description>
+    </field>
+   </message>
+   <message id="2008" name="TBR Sensor Reading" abbrev="TBRSensor" source="vehicle,ccu">
+    <description>
+      TBR700RT internal sensor reading
+    </description>
+    <field name="TBR serial number" abbrev="serial_no" type="uint32_t">
+      <description>
+        Serial number of the TBR receiver
+      </description>
+    </field>
+    <field name="UNIX Timestamp" abbrev="unix_timestamp" type="uint32_t">
+      <description>
+        Time of sensor reading as UNIX timestamp 
+      </description>
+    </field>
+    <field name="Temperature" abbrev="temperature" type="fp32_t" unit="°C"/>
+    <field name="Average noise level" abbrev="avg_noise_level" type="uint8_t"/>
+    <field name="Peak noise level," abbrev="peak_noise_level" type="uint8_t"/>
+    <field name="Receiver listening frequency" abbrev="recv_listen_freq" type="uint8_t"/>
+    <field name="Receiver Memory Address" abbrev="recv_mem_addr" type="uint16_t">
+      <description>
+        Receiver Memory Address (running entry number in flash memory)
+      </description>
+    </field>
+   </message>
+
 </messages>
