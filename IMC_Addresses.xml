@@ -167,6 +167,8 @@
   <address id="0x8028" name="manta-dmsmw-03"/>
   <address id="0x8029" name="manta-rugged"/>
   <address id="0x802a" name="manta-rugged-2"/>
+  <address id="0x802b" name="manta-uk-01"/>
+  <address id="0x802c" name="manta-uk-02"/>
   <address id="0x8030" name="nest-1"/>
   <address id="0x8040" name="piccolo-gs1"/>
   <address id="0x8041" name="piccolo-gs2"/>
@@ -211,8 +213,11 @@
   <address id="0x8501" name="wavy-1"/>
   <address id="0x8502" name="wavy-2"/>
   <!-- Other Sensors (Self containing sensor systems) -->
+  <address id="0x8803" name="ntnu-autonaut"/>
+  <address id="0x8804" name="ntnu-autonaut-L3"/>
   <address id="0x9001" name="ntnu-nest-01"/>
   <address id="0x9002" name="ntnu-nest-02"/>
+  
   <address id="0x9501" name="manta-sabuvis"/>
   <!-- Special IDs -->
   <address id="0xFFF0" name="broadcast"/>
