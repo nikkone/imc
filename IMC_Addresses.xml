@@ -133,6 +133,10 @@
   <address id="0x2c56" name="ntnu-cruisermini-006" />
   <!-- ASVs (Others) -->
   <address id="0x2801" name="wg-sv3-127"/>
+  <address id="0x2810" name="ntnu-otter-01"/>
+  <address id="0x2811" name="ntnu-otter-02"/>
+  <address id="0x2812" name="ntnu-otter-03"/>
+  <address id="0x2813" name="ntnu-otter-04"/>
   <!-- CCUs (special IDs) -->
   <address id="0x4101" name="ccu-lsts-1-1"/>
   <address id="0x410E" name="ccu-lsts-1-14"/>
