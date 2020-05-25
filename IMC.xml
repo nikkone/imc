@@ -10868,10 +10868,10 @@
       </description>
       <value id="1" name="R256" abbrev="R256"/>
       <value id="2" name="R04K" abbrev="R04K"/>
-      <value id="3" name="R06K" abbrev="R06K"/>
       <value id="4" name="R64K" abbrev="R64K"/>
       <value id="5" name="R01M" abbrev="R01M"/>
       <value id="6" name="S256" abbrev="S256"/>
+      <value id="3" name="S64K" abbrev="S64K"/>
       <value id="7" name="HS256" abbrev="HS256"/>
       <value id="8" name="DS256" abbrev="DS256"/>
     </field>
@@ -10901,7 +10901,18 @@
         Receiver Memory Address (running entry number in flash memory)
       </description>
     </field>
+    <field name="Latitude (WGS-84)" abbrev="lat" type="fp64_t" unit="rad" min="-3.141592653589793" max="3.141592653589793">
+     <description>
+        WGS-84 Latitude, stored from GPSfix.
+     </description>
+    </field>
+    <field name="Longitude (WGS-84)" abbrev="lon" type="fp64_t" unit="rad" min="-3.141592653589793" max="3.141592653589793">
+     <description>
+       WGS-84 Longitude, stored from GPSfix.
+     </description>
+    </field>
    </message>
+
    <message id="2008" name="TBR Sensor Reading" abbrev="TBRSensor" source="vehicle,ccu">
     <description>
       TBR700RT internal sensor reading
