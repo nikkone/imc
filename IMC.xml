@@ -10991,11 +10991,17 @@
         Name of the vehicle the plan is to target
       </description>
     </field>
-    <field name="Type" abbrev="problem_type" type="uint8_t" unit="Enumerated" prefix="TBR">
+    <field name="Type" abbrev="problem_type" type="uint8_t" unit="Enumerated" prefix="PPT">
       <description>
         Planning Problem Type
       </description>
-      <value id="1" name="Feasible Path" abbrev="fpath"/>
+      <value id="1" name="Feasible Path" abbrev="fpath">
+        <description>Find a feasible path</description>
+      </value>
+      <value id="2" name="Coverage" abbrev="coverage">
+        <description>Cover area</description>
+      </value>
+
     </field>
 
     <field name="Start Latitude WGS-84" abbrev="start_lat" type="fp64_t" unit="rad" min="-1.5707963267948966" max="1.5707963267948966">
