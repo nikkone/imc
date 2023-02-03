@@ -11047,4 +11047,50 @@
       </description>
     </field>
    </message>
+
+   <message id="2010" name="Otter Formation" abbrev="otterFormation" source="vehicle,ccu">
+    <description>
+      Search formation for FishOtterProject (TODO: Also need a message to get progress? can IMC:: Plan Control State be used?)
+    </description>
+    <field name="Minimum Speed" abbrev="minSpeed" type="fp32_t">
+      <description>
+        The lowest speed to move without stopping during the search.
+      </description>
+    </field>
+    <field name="Maximum Speed" abbrev="maxSpeed" type="fp32_t">
+      <description>
+        The highest speed to move during the search.
+      </description>
+    </field>
+    <field name="Speed Units" abbrev="speed_units" type="uint8_t" value="0" unit="Enumerated" enum-def="SpeedUnits">
+      <description>
+        Speed units for the maximum and minimum speeds.
+      </description>
+    </field>
+    <field name="Maximum progress difference" abbrev="maxProgressDiff" type="fp32_t">
+      <description>
+        The maximum progress difference between formation participants before a wait operation is activated.
+      </description>
+    </field>
+    <field name="Plan Specification" abbrev="plan" type="message" message-type="PlanSpecification"/>
+      <description>
+        If no formation leader is given, the formation will follow this plan.
+      </description>
+    </field>
+    <field name="Formation Leader" abbrev="participants" type="message-list" message-type="VehicleFormationParticipant">
+      <description>
+        If not empty, the formation will follow the leader.
+      </description>
+    </field>
+    <field name="Formation Participants" abbrev="participants" type="message-list" message-type="VehicleFormationParticipant">
+      <description>
+        List of formation participants.
+      </description>
+    </field>
+    <field name="Custom settings for maneuver" abbrev="custom" unit="TupleList" type="plaintext">
+      <description>
+        Custom settings for maneuver.
+      </description>
+    </field>
+   </message>
 </messages>
