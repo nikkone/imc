@@ -11072,12 +11072,12 @@
         The maximum progress difference between formation participants before a wait operation is activated.
       </description>
     </field>
-    <field name="Plan Specification" abbrev="plan" type="message" message-type="PlanSpecification"/>
+    <field name="Plan Specification" abbrev="plan" type="message" message-type="PlanSpecification">
       <description>
         If no formation leader is given, the formation will follow this plan.
       </description>
     </field>
-    <field name="Formation Leader" abbrev="participants" type="message-list" message-type="VehicleFormationParticipant">
+    <field name="Formation Leader" abbrev="leader" type="uint16_t">
       <description>
         If not empty, the formation will follow the leader.
       </description>
