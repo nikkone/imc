@@ -1446,6 +1446,11 @@
         Height above WGS-84 ellipsoid.
       </description>
     </field>
+    <field name="Heading" abbrev="heading" type="fp32_t" unit="rad">
+      <description>
+        Height above WGS-84 ellipsoid.
+      </description>
+    </field>
     <field name="Services" abbrev="services" type="plaintext">
       <description>
         Semicolon separated list of URLs. Examples of such URLs are:
@@ -11067,29 +11072,19 @@
         Speed units for the maximum and minimum speeds.
       </description>
     </field>
-    <field name="Maximum progress difference" abbrev="maxProgressDiff" type="fp32_t">
+    <field name="Source To Follow" abbrev="target" type="plaintext">
       <description>
-        The maximum progress difference between formation participants before a wait operation is activated.
+        The identifier of the point source to follow (via RemoteSensorInfo).
       </description>
     </field>
-    <field name="Plan Specification" abbrev="plan" type="message" message-type="PlanSpecification">
-      <description>
-        If no formation leader is given, the formation will follow this plan.
-      </description>
-    </field>
-    <field name="Formation Leader" abbrev="leader" type="uint16_t">
-      <description>
-        If not empty, the formation will follow the leader.
-      </description>
-    </field>
-    <field name="Formation Participants" abbrev="participants" type="message-list" message-type="VehicleFormationParticipant">
+    <field name="Formation Participants" abbrev="participants" unit="TupleList" type="plaintext">
       <description>
         List of formation participants.
       </description>
     </field>
-    <field name="Custom settings for maneuver" abbrev="custom" unit="TupleList" type="plaintext">
+    <field name="Custom settings for formation" abbrev="custom" unit="TupleList" type="plaintext">
       <description>
-        Custom settings for maneuver.
+        Custom settings for formation.
       </description>
     </field>
    </message>
