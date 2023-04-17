@@ -11401,6 +11401,17 @@
         Speed units for the maximum and minimum speeds.
       </description>
     </field>
+    <field name="Minimum Radius" abbrev="minRadius" type="fp32_t">
+      <description>
+        The lowest distance to target when not constricted by obstacles.
+      </description>
+    </field>
+    <field name="Maximum Radius" abbrev="maxRadius" type="fp32_t">
+      <description>
+        The highest distance to target when not constricted by obstacles.
+      </description>
+    </field>
+
     <field name="Source To Follow" abbrev="target" type="plaintext">
       <description>
         The identifier of the point source to follow (via RemoteSensorInfo).
@@ -11415,6 +11426,21 @@
       <description>
         Custom settings for formation.
       </description>
+    </field>
+
+    <field name="Message Type" abbrev="msg_type" type="uint8_t" unit="Enumerated" prefix="T">
+      <description>
+        Message Type
+      </description>
+      <value id="1" name="Start" abbrev="start">
+        <description>Command to initialize and start a formation controller.</description>
+      </value>
+      <value id="2" name="Stop" abbrev="stop">
+        <description>Command to stop a formation controller.</description>
+      </value>
+      <value id="3" name="Parameter Change" abbrev="param_change">
+        <description>Message contains changed parameters for an already running formation controller.</description>
+      </value>
     </field>
    </message>
 
