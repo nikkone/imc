@@ -11417,7 +11417,7 @@
         The identifier of the point source to follow (via RemoteSensorInfo).
       </description>
     </field>
-    <field name="Formation Participants" abbrev="participants" unit="TupleList" type="plaintext">
+    <field name="Formation Participants" abbrev="participants" unit="List" type="plaintext">
       <description>
         List of formation participants.
       </description>
