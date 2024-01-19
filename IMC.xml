@@ -11220,6 +11220,64 @@
     </field>
   </message>
   
+  <message id="1000" name="Dynamic Obstacles Vector" abbrev="DynObsVec" source="ccu" category="Maneuvering">
+   <description>
+    Vector of dynamic obstacles to be used in collision avoidance algorithms.
+   </description>
+   <field name="Obstacle List" abbrev="obstacles" type="message-list" message-type="CollisionAvoidance">
+   <description>
+    List of CollisionAvoidance messages.
+   </description>
+   </field>
+  </message>
+  
+  <message id="1010" name="Negotiation data" abbrev="NegotiationData" source="vehicle" category="Autonomy">
+    <description>
+      Send intentions (intended course, speed, and negotiation state) for negotitaion protocol.
+    </description>
+    <field name="MMSI" abbrev="mmsi" type="plaintext">
+      <description>
+        Ownship ID.
+      </description>
+    </field>
+    <field name="Intended Course" abbrev="cog_int" type="fp32_t" unit="°">
+      <description>
+        Intended COG in degrees.
+      </description>
+    </field>
+    <field name="Intended Speed" abbrev="sog_int" type="fp32_t" unit="m/s">
+      <description>
+        Intended SOG in m/s.
+      </description>
+    </field>
+    <field name="Negotiation state" abbrev="state" type="uint8_t">
+      <description>
+        Negotiation state (0 = Continues searching new actions, 1 = Quiescene (intentions are stable))
+      </description>
+    </field>
+  </message>
+  
+  <message id="1011" name="Negotiation message log" abbrev="NegotiationMsgLog" source="vehicle" category="Autonomy">
+    <description>
+      Send received and transmitted negotiation message counts.
+    </description>
+    <field name="MMSI" abbrev="mmsi" type="plaintext">
+      <description>
+        Ownship ID.
+      </description>
+    </field>
+    <field name="Received Messages" abbrev="msg_in" type="uint8_t">
+      <description>
+        Received message count.
+      </description>
+    </field>
+    <field name="Transmitted Messages" abbrev="msg_out" type="uint8_t">
+      <description>
+        Transmitted message count.
+      </description>
+    </field>
+  </message>
+
    <message id="2007" name="TBR Fish Tag" abbrev="TBRFishTag" source="vehicle,ccu" category="Sensors">
     <description>
       TBR700RT received fish tag detection
@@ -11443,5 +11501,7 @@
       </value>
     </field>
    </message>
+
+
 
 </messages>
