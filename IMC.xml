@@ -11046,6 +11046,147 @@
     </field>
    </message>
   
+  <message id="911" name="Estimated Wave Frequency" abbrev="EstimatedFreq" source="vehicle" flags="periodic" category="Sensors">
+    <field name="Value" abbrev="value" type="fp64_t" unit="rad/s">
+      <description>
+        Wave Frequency Estimated from Heave Acceleration (IMU).
+      </description>
+    </field>
+  </message>
+
+
+  <message id="916" name="Collision Avoidance" abbrev="CollisionAvoidance" source="vehicle" flags="periodic" category="Navigation">
+    <description>
+      Envelope with CAS information.
+    </description>
+    <field name="MMSI" abbrev="mmsi" type="plaintext">
+      <description>
+        Obstacle ID.
+      </description>
+    </field>
+    <field name="Latitude (WGS-84)" abbrev="lat" type="fp64_t" unit="rad" min="-1.5707963267948966" max="1.5707963267948966">
+      <description>
+        Obstacle WGS-84 Latitude.
+      </description>
+    </field>
+    <field name="Longitude (WGS-84)" abbrev="lon" type="fp64_t" unit="rad" min="-3.141592653589793" max="3.141592653589793">
+      <description>
+        Obstacle WGS-84 Longitude.
+      </description>
+    </field>
+    <field name="Offset north" abbrev="x" type="fp32_t" unit="m">
+      <description>
+        The North offset of the North/East/Down field with respect to
+        own vessel.
+      </description>
+    </field>
+    <field name="Offset east" abbrev="y" type="fp32_t" unit="m">
+      <description>
+        The East offset of the North/East/Down field with respect to
+        own vessel.
+      </description>
+    </field>
+    <field name="Speed" abbrev="speed" type="fp32_t" unit="m/s">
+      <description>
+        Obstacle SOG in m/s.
+      </description>
+    </field>
+    <field name="Course" abbrev="course" type="fp32_t" unit="°">
+      <description>
+        Obstacle COG in degrees.
+      </description>
+    </field>
+    <field name="Distance" abbrev="dist" type="fp32_t" unit="m">
+      <description>
+        Distance between obstacle and own vessel.
+      </description>
+    </field>
+    <field name="Length" abbrev="length" type="fp32_t" unit="m">
+      <description>
+        Obstacle length.
+      </description>
+    </field>
+    <field name="Width" abbrev="width" type="fp32_t" unit="m">
+      <description>
+        Obstacle width.
+      </description>
+    </field>
+    <field name="Obstacle vector size" abbrev="o_vect" type="fp32_t">
+      <description>
+        Size of obstacles vector.
+      </description>
+    </field>
+  </message>
+
+  <message id="918" name="Heave Displacement" abbrev="Heave" source="vehicle" category="Sensors">
+    <description>
+      Contains heave measurement computed by GPS.
+    </description>
+    <field name="Heave" abbrev="value" type="fp32_t" unit="m">
+      <description>
+        Example: 2m.
+      </description>
+    </field>
+  </message>
+  
+  <message id="1000" name="Dynamic Obstacles Vector" abbrev="DynObsVec" source="ccu" category="Maneuvering">
+   <description>
+    Vector of dynamic obstacles to be used in collision avoidance algorithms.
+   </description>
+   <field name="Obstacle List" abbrev="obstacles" type="message-list" message-type="CollisionAvoidance">
+   <description>
+    List of CollisionAvoidance messages.
+   </description>
+   </field>
+  </message>
+  
+  <message id="1010" name="Negotiation data" abbrev="NegotiationData" source="vehicle" category="Autonomy">
+    <description>
+      Send intentions (intended course, speed, and negotiation state) for negotitaion protocol.
+    </description>
+    <field name="MMSI" abbrev="mmsi" type="plaintext">
+      <description>
+        Ownship ID.
+      </description>
+    </field>
+    <field name="Intended Course" abbrev="cog_int" type="fp32_t" unit="°">
+      <description>
+        Intended COG in degrees.
+      </description>
+    </field>
+    <field name="Intended Speed" abbrev="sog_int" type="fp32_t" unit="m/s">
+      <description>
+        Intended SOG in m/s.
+      </description>
+    </field>
+    <field name="Negotiation state" abbrev="state" type="uint8_t">
+      <description>
+        Negotiation state (0 = Continues searching new actions, 1 = Quiescene (intentions are stable))
+      </description>
+    </field>
+  </message>
+  
+  <message id="1011" name="Negotiation message log" abbrev="NegotiationMsgLog" source="vehicle" category="Autonomy">
+    <description>
+      Send received and transmitted negotiation message counts.
+    </description>
+    <field name="MMSI" abbrev="mmsi" type="plaintext">
+      <description>
+        Ownship ID.
+      </description>
+    </field>
+    <field name="Received Messages" abbrev="msg_in" type="uint8_t">
+      <description>
+        Received message count.
+      </description>
+    </field>
+    <field name="Transmitted Messages" abbrev="msg_out" type="uint8_t">
+      <description>
+        Transmitted message count.
+      </description>
+    </field>
+  </message>
+
   <message id="1014" name="Current Profile" abbrev="CurrentProfile" source="vehicle" flags="periodic" category="Sensors">
     <description>
       Contains a profile of water velocities measured relative to the vehicle
@@ -11198,83 +11339,6 @@
     </field>
     <field name="Reason" abbrev="reason" type="plaintext">
       <description>Textual description for why this restriction is needed.</description>
-    </field>
-  </message>
-
-  <message id="911" name="Estimated Wave Frequency" abbrev="EstimatedFreq" source="vehicle" flags="periodic" category="Sensors">
-    <field name="Value" abbrev="value" type="fp64_t" unit="rad/s">
-      <description>
-        Wave Frequency Estimated from Heave Acceleration (IMU).
-      </description>
-    </field>
-  </message>
-
-  <message id="918" name="Heave Displacement" abbrev="Heave" source="vehicle" category="Sensors">
-    <description>
-      Contains heave measurement computed by GPS.
-    </description>
-    <field name="Heave" abbrev="value" type="fp32_t" unit="m">
-      <description>
-        Example: 2m.
-      </description>
-    </field>
-  </message>
-  
-  <message id="1000" name="Dynamic Obstacles Vector" abbrev="DynObsVec" source="ccu" category="Maneuvering">
-   <description>
-    Vector of dynamic obstacles to be used in collision avoidance algorithms.
-   </description>
-   <field name="Obstacle List" abbrev="obstacles" type="message-list" message-type="CollisionAvoidance">
-   <description>
-    List of CollisionAvoidance messages.
-   </description>
-   </field>
-  </message>
-  
-  <message id="1010" name="Negotiation data" abbrev="NegotiationData" source="vehicle" category="Autonomy">
-    <description>
-      Send intentions (intended course, speed, and negotiation state) for negotitaion protocol.
-    </description>
-    <field name="MMSI" abbrev="mmsi" type="plaintext">
-      <description>
-        Ownship ID.
-      </description>
-    </field>
-    <field name="Intended Course" abbrev="cog_int" type="fp32_t" unit="°">
-      <description>
-        Intended COG in degrees.
-      </description>
-    </field>
-    <field name="Intended Speed" abbrev="sog_int" type="fp32_t" unit="m/s">
-      <description>
-        Intended SOG in m/s.
-      </description>
-    </field>
-    <field name="Negotiation state" abbrev="state" type="uint8_t">
-      <description>
-        Negotiation state (0 = Continues searching new actions, 1 = Quiescene (intentions are stable))
-      </description>
-    </field>
-  </message>
-  
-  <message id="1011" name="Negotiation message log" abbrev="NegotiationMsgLog" source="vehicle" category="Autonomy">
-    <description>
-      Send received and transmitted negotiation message counts.
-    </description>
-    <field name="MMSI" abbrev="mmsi" type="plaintext">
-      <description>
-        Ownship ID.
-      </description>
-    </field>
-    <field name="Received Messages" abbrev="msg_in" type="uint8_t">
-      <description>
-        Received message count.
-      </description>
-    </field>
-    <field name="Transmitted Messages" abbrev="msg_out" type="uint8_t">
-      <description>
-        Transmitted message count.
-      </description>
     </field>
   </message>
 
