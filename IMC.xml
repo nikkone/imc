@@ -11196,14 +11196,29 @@
         Ownship ID.
       </description>
     </field>
+    <field name="Concession level" abbrev="concession" type="fp32_t">
+      <description>
+        Concession level of own ship.
+      </description>
+    </field>
     <field name="Intended Course" abbrev="cog_int" type="fp32_t" unit="°">
       <description>
         Intended COG in degrees.
       </description>
     </field>
+    <field name="Intended Course Offset" abbrev="cog_int_off" type="fp32_t" unit="°">
+      <description>
+        Intended course offset value in degrees.
+      </description>
+    </field>
     <field name="Intended Speed" abbrev="sog_int" type="fp32_t" unit="m/s">
       <description>
         Intended SOG in m/s.
+      </description>
+    </field>
+    <field name="Intended Speed Offset" abbrev="sog_int_off" type="fp32_t" unit="m/s">
+      <description>
+        Intended speed offset value in m/s.
       </description>
     </field>
     <field name="Negotiation state" abbrev="state" type="uint8_t">
